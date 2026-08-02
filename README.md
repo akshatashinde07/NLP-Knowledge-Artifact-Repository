@@ -251,7 +251,8 @@ in a modern web browser.
 Open the project folder in **Visual Studio Code** and launch `index.html` using a local development server such as Live Server.
 
 ---
-
+The project is live at :-
+https://akshatashinde07.github.io/NLP-Knowledge-Artifact-Repository/
 
 ---
 
