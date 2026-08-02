@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NLP Knowledge Artifact Repository — Week 1</title>
+<meta name="description" content="A structured knowledge repository covering Text Preprocessing, Feature Engineering, Language Representation and Language Models — NLP, Semester V, CCE-1.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- Mobile top bar -->
+<header class="topbar">
+  <span class="brand">NLP<span>Repo</span></span>
+  <button class="hamburger" id="hamburger-btn" aria-label="Open navigation menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+</header>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<div class="shell">
+  <!-- ============ SIDEBAR NAVIGATION ============ -->
+  <nav class="sidebar" id="sidebar" aria-label="Section navigation">
+    <span class="brand">NLP <span>Repository</span></span>
+    <span class="brand-sub">Week 1 · Semester V</span>
+
+    <div class="nav-group">
+      <a class="nav-link" href="#home"><span class="ic">🏠</span>Home</a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-label">Core Concepts</div>
+      <a class="nav-link" href="#preprocessing"><span class="ic">📝</span>Text Preprocessing</a>
+      <a class="nav-link" href="#feature-engineering"><span class="ic">📊</span>Feature Engineering</a>
+      <a class="nav-link" href="#representation"><span class="ic">🧠</span>Language Representation</a>
+      <a class="nav-link" href="#models"><span class="ic">🤖</span>Language Models</a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-label">Analysis</div>
+      <a class="nav-link" href="#comparisons"><span class="ic">⚖️</span>Comparative Analysis</a>
+      <a class="nav-link" href="#workflows"><span class="ic">🔀</span>Workflow Diagrams</a>
+      <a class="nav-link" href="#applications"><span class="ic">🌐</span>Real-World Applications</a>
+      <a class="nav-link" href="#research"><span class="ic">🔬</span>Research &amp; Industry</a>
+      <a class="nav-link" href="#sustainability"><span class="ic">🌍</span>Sustainability &amp; Impact</a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-label">Wrap-up</div>
+      <a class="nav-link" href="#reflection"><span class="ic">💭</span>Reflection</a>
+      <a class="nav-link" href="#contribution"><span class="ic">👥</span>Contribution Matrix</a>
+      <a class="nav-link" href="#glossary"><span class="ic">📖</span>Glossary</a>
+      <a class="nav-link" href="#quiz"><span class="ic">✅</span>Mini Quiz</a>
+      <a class="nav-link" href="#references"><span class="ic">🔗</span>References</a>
+      <a class="nav-link" href="#ai-declaration"><span class="ic">🤝</span>AI Declaration</a>
+    </div>
+
+    <button class="theme-toggle" data-theme-toggle type="button">🌙 Dark mode</button>
+  </nav>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main>
+
+    <!-- ================= HOME ================= -->
+    <section class="section hero" id="home">
+      <div class="container">
+        <div class="hero-badges">
+          <span class="badge">NLP · Semester V</span>
+          <span class="badge">Academic Year 2026–27</span>
+          <span class="badge">Week 1 Knowledge Repository</span>
+        </div>
+        <h1>NLP Knowledge Artifact <span class="accent">Repository</span></h1>
+        <p class="subtitle">Understanding Text Preprocessing, Feature Engineering, Language Representation &amp; Language Models — built for Continuous Comprehensive Evaluation Activity I.</p>
+
+        <div class="hero-meta">
+          <div><strong>Natural Language Processing</strong>Course</div>
+          <div><strong>2026 – 2027</strong>Academic Year</div>
+          <div><strong>Semester V</strong>Term</div>
+          <div><strong>CCE‑1</strong>Assignment</div>
+        </div>
+
+        <!-- Signature element: sentence animating into tokens -->
+        <div class="token-stream" aria-hidden="false">
+          <div class="raw">raw_text = <span class="q">"I love Natural Language Processing."</span></div>
+          <div class="token-row" id="token-row"></div>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#preprocessing" data-scroll-to="#preprocessing">Explore Repository →</a>
+          <a class="btn btn-outline" href="#quiz" data-scroll-to="#quiz">Take the Quiz</a>
+        </div>
+
+        <div class="hero-cards">
+          <div class="hero-card"><span class="emoji">📝</span><h4>Text Preprocessing</h4><p>Cleaning and structuring raw text into a usable form.</p></div>
+          <div class="hero-card"><span class="emoji">📊</span><h4>Feature Engineering</h4><p>Turning text into numerical features models can learn from.</p></div>
+          <div class="hero-card"><span class="emoji">🧠</span><h4>Language Representation</h4><p>Mapping words to vectors that capture meaning.</p></div>
+          <div class="hero-card"><span class="emoji">🤖</span><h4>Language Models</h4><p>Learning the statistics and structure of language itself.</p></div>
+        </div>
+
+        <div class="learn-box">
+          <h3>What will you learn here?</h3>
+          <p style="font-size:.88rem;margin-bottom:14px;">This repository documents the foundational Week 1 concepts of NLP as a beginner-friendly reference: what each technique is, why it exists, how it works internally, when to use it, and where it shows up in real products.</p>
+          <ul class="learn-grid">
+            <li>✔ How raw text becomes clean, structured input</li>
+            <li>✔ How text is converted into numerical features</li>
+            <li>✔ How words become vectors that capture meaning</li>
+            <li>✔ How language models learn and generate language</li>
+            <li>✔ Trade-offs between classical and modern techniques</li>
+            <li>✔ Where these techniques power real applications</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SHARED TOOLBAR (search + filter) sits above preprocessing ============ -->
+    <section class="section" style="padding-bottom:0; border-bottom:none;">
+      <div class="container">
+        <span class="section-eyebrow">Section A — Concept Cards</span>
+        <h2>Search &amp; Filter Concepts</h2>
+        <p class="section-lead">All 21 Week‑1 concepts live below, grouped by category. Use the search box or filter pills to jump straight to what you need — they work across every concept card on this page.</p>
+        <div class="toolbar">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <input type="text" id="concept-search" placeholder="Search concepts, e.g. 'lemmatization'…" aria-label="Search concepts">
+          </div>
+          <div class="filter-pills">
+            <button class="pill active" data-filter="all" type="button">All</button>
+            <button class="pill" data-filter="preprocessing" type="button">Preprocessing</button>
+            <button class="pill" data-filter="feature" type="button">Feature Engineering</button>
+            <button class="pill" data-filter="representation" type="button">Representation</button>
+            <button class="pill" data-filter="models" type="button">Language Models</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TEXT PREPROCESSING ================= -->
+    <section class="section" id="preprocessing">
+      <div class="container">
+        <span class="section-eyebrow">01 · Core Concepts</span>
+        <h2>📝 Text Preprocessing</h2>
+        <p class="section-lead">The first stage of any NLP pipeline: turning messy raw text into a clean, structured sequence of tokens ready for feature extraction.</p>
+        <div class="card-grid" data-concept-grid="preprocessing"></div>
+        <p class="no-results">No preprocessing concepts match your search/filter.</p>
+      </div>
+    </section>
+
+    <!-- ================= FEATURE ENGINEERING ================= -->
+    <section class="section" id="feature-engineering">
+      <div class="container">
+        <span class="section-eyebrow">02 · Core Concepts</span>
+        <h2>📊 Feature Engineering</h2>
+        <p class="section-lead">Once text is clean, it must be converted into numbers. These classical techniques turn word frequency and rarity into usable features.</p>
+        <div class="card-grid" data-concept-grid="feature"></div>
+        <p class="no-results">No feature engineering concepts match your search/filter.</p>
+
+        <div class="learn-box" style="margin-top:34px;">
+          <h3>TF‑IDF at a glance</h3>
+          <p style="font-size:.88rem;margin-bottom:0;">
+            <span class="mono" style="color:var(--accent)">TF‑IDF(t, d)</span> = <span class="mono" style="color:var(--accent-amber)">TF(t, d)</span> × <span class="mono" style="color:var(--accent-amber)">IDF(t)</span> —
+            a word scores high when it appears <em>often in one document</em> but <em>rarely across the rest of the corpus</em>, which is exactly the kind of word that best describes what that document is about.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LANGUAGE REPRESENTATION ================= -->
+    <section class="section" id="representation">
+      <div class="container">
+        <span class="section-eyebrow">03 · Core Concepts</span>
+        <h2>🧠 Language Representation</h2>
+        <p class="section-lead">How words move from symbols to numbers to meaning-aware vectors that machine learning models can reason over.</p>
+
+        <div class="learn-box" style="margin-bottom:32px;">
+          <h3>From word to model input</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-family:var(--font-mono);font-size:.85rem;color:var(--text-dim);">
+            <span class="badge">Word</span><span style="color:var(--accent)">↓</span>
+            <span class="badge">Numerical Representation</span><span style="color:var(--accent)">↓</span>
+            <span class="badge">Vector</span><span style="color:var(--accent)">↓</span>
+            <span class="badge">NLP / ML Model</span>
+          </div>
+        </div>
+
+        <div class="card-grid" data-concept-grid="representation"></div>
+        <p class="no-results">No representation concepts match your search/filter.</p>
+      </div>
+    </section>
+
+    <!-- ================= LANGUAGE MODELS ================= -->
+    <section class="section" id="models">
+      <div class="container">
+        <span class="section-eyebrow">04 · Core Concepts</span>
+        <h2>🤖 Language Models</h2>
+        <p class="section-lead">Models that learn the underlying structure of language itself, enabling prediction, generation, and deep contextual understanding.</p>
+        <div class="card-grid" data-concept-grid="models"></div>
+        <p class="no-results">No language model concepts match your search/filter.</p>
+
+        <h3 style="margin-top:44px;font-size:1.1rem;">Evolution of Language Models</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+            <div class="timeline-body">
+              <h4>Statistical Language Models</h4>
+              <p>Probability-based, count-driven models (e.g. N-grams) that estimate word sequences from corpus frequency.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"><div class="timeline-dot" style="background:var(--accent-amber)"></div><div class="timeline-line"></div></div>
+            <div class="timeline-body">
+              <h4>Neural Language Models</h4>
+              <p>RNN/LSTM-based models that learn dense representations and carry context across a sequence.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"><div class="timeline-dot" style="background:var(--accent-rose)"></div></div>
+            <div class="timeline-body">
+              <h4>Transformer-based Representations</h4>
+              <p>Self-attention models that process full sequences in parallel, powering today's state-of-the-art NLP systems.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMPARATIVE ANALYSIS ================= -->
+    <section class="section" id="comparisons">
+      <div class="container">
+        <span class="section-eyebrow">Section B</span>
+        <h2>⚖️ Comparative Analysis</h2>
+        <p class="section-lead">Five side-by-side comparisons of related techniques covered in this repository — mechanism, complexity, strengths, weaknesses, and best-fit use cases.</p>
+
+        <div class="compare-block">
+          <h3>1. Stemming vs. Lemmatization</h3>
+          <div class="table-wrap"><table class="compare">
+            <thead><tr><th></th><th>Stemming</th><th>Lemmatization</th></tr></thead>
+            <tbody>
+              <tr><td>Mechanism</td><td>Rule-based suffix stripping</td><td>Dictionary + grammar-based lookup</td></tr>
+              <tr><td>Complexity</td><td><strong>Low</strong> — fast, rule-based</td><td>Moderate — needs POS tagging &amp; lexicon</td></tr>
+              <tr><td>Strengths</td><td>Very fast, simple to implement</td><td>Produces real, accurate words</td></tr>
+              <tr><td>Weaknesses</td><td>Can produce non-words</td><td>Slower, resource-heavy</td></tr>
+              <tr><td>Best for</td><td>Large-scale search/indexing</td><td>Tasks needing accurate meaning (chatbots, QA)</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <div class="compare-block">
+          <h3>2. TF vs. TF‑IDF</h3>
+          <div class="table-wrap"><table class="compare">
+            <thead><tr><th></th><th>TF</th><th>TF‑IDF</th></tr></thead>
+            <tbody>
+              <tr><td>Mechanism</td><td>Frequency within a single document</td><td>Frequency weighted by corpus-wide rarity</td></tr>
+              <tr><td>Complexity</td><td><strong>Low</strong></td><td>Low–moderate (needs full corpus stats)</td></tr>
+              <tr><td>Strengths</td><td>Simple, fast to compute</td><td>Down-weights generic/common words</td></tr>
+              <tr><td>Weaknesses</td><td>Common words dominate</td><td>Still ignores word order/semantics</td></tr>
+              <tr><td>Best for</td><td>Quick keyword frequency checks</td><td>Search ranking, document keyword extraction</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <div class="compare-block">
+          <h3>3. Word2Vec vs. FastText</h3>
+          <div class="table-wrap"><table class="compare">
+            <thead><tr><th></th><th>Word2Vec</th><th>FastText</th></tr></thead>
+            <tbody>
+              <tr><td>Mechanism</td><td>Predicts word from context (CBOW/Skip-gram)</td><td>Same, but on character n-grams (sub-words)</td></tr>
+              <tr><td>Complexity</td><td>Moderate</td><td>Moderate–high (more parameters)</td></tr>
+              <tr><td>Strengths</td><td>Fast, strong semantic analogies</td><td>Handles OOV &amp; rare/morphological words</td></tr>
+              <tr><td>Weaknesses</td><td>Fails on unseen/out-of-vocabulary words</td><td>Larger model size</td></tr>
+              <tr><td>Best for</td><td>English/well-resourced languages</td><td>Morphologically rich, regional languages</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <div class="compare-block">
+          <h3>4. Statistical vs. Neural Language Models</h3>
+          <div class="table-wrap"><table class="compare">
+            <thead><tr><th></th><th>Statistical LMs</th><th>Neural LMs</th></tr></thead>
+            <tbody>
+              <tr><td>Mechanism</td><td>Frequency-based N-gram probabilities</td><td>Learned dense representations (RNN/LSTM)</td></tr>
+              <tr><td>Complexity</td><td><strong>Low</strong></td><td>High — needs GPU training, large data</td></tr>
+              <tr><td>Strengths</td><td>Simple, interpretable, fast</td><td>Captures longer context, generalizes better</td></tr>
+              <tr><td>Weaknesses</td><td>Sparse for large N, no real context</td><td>Sequential training is slow</td></tr>
+              <tr><td>Best for</td><td>Lightweight, low-resource setups</td><td>Text generation, translation, sequence tasks</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <div class="compare-block">
+          <h3>5. One-Hot Encoding vs. Word Embeddings</h3>
+          <div class="table-wrap"><table class="compare">
+            <thead><tr><th></th><th>One-Hot Encoding</th><th>Word Embeddings</th></tr></thead>
+            <tbody>
+              <tr><td>Mechanism</td><td>Binary sparse vector, one index per word</td><td>Dense vector learned from context</td></tr>
+              <tr><td>Complexity</td><td>Very low, but memory-heavy at scale</td><td>Moderate — requires training/pre-trained models</td></tr>
+              <tr><td>Strengths</td><td>Simple, no training needed</td><td>Captures semantic similarity</td></tr>
+              <tr><td>Weaknesses</td><td>No notion of word similarity, huge dimensionality</td><td>Needs large corpora to train well</td></tr>
+              <tr><td>Best for</td><td>Small, categorical vocabularies</td><td>Most modern NLP tasks</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WORKFLOW DIAGRAMS ================= -->
+    <section class="section" id="workflows">
+      <div class="container">
+        <span class="section-eyebrow">Section C</span>
+        <h2>🔀 Workflow Diagrams</h2>
+        <p class="section-lead">Hover or tap any step below to see a short explanation of what happens at that stage.</p>
+
+        <div class="workflow">
+          <h3>Workflow 1 — Complete Text Preprocessing Pipeline</h3>
+          <p class="wf-desc">Raw text is progressively cleaned and normalized until it's ready for feature extraction.</p>
+          <div class="wf-steps">
+            <div class="wf-step" tabindex="0">Raw Text<div class="tip">Unprocessed input text exactly as collected — may contain noise, casing, and punctuation.</div></div>
+            <span class="wf-arrow">→</span>
+            <div class="wf-step" tabindex="0">Sentence Segmentation<div class="tip">Splits the text block into individual sentences for sentence-level processing.</div></div>
+            <span class="wf-arrow">→</span>
+            <div class="wf-step" tabindex="0">Tokenization<div class="tip">Breaks each sentence into individual word/punctuation tokens.</div></div>
+            <span class="wf-arrow">→</span>
+            <div class="wf-step" tabindex="0">Case Normalization<div class="tip">Converts all tokens to a consistent case, usually lowercase.</div></div>
+            <span class="wf-arrow">→</span>
+            <div class="wf-step" tabindex="0">Stop-word Removal<div class="tip">Removes common low-information words like "the", "is", "a".</div></div>
+            <span class="wf-arrow">→</span>
+            <div class="wf-step" tabindex="0">Noise / Text Cleaning<div class="tip">Strips URLs, HTML tags, special characters, and fixes formatting issues.</div></div>
+            <span class="wf-arrow">→</span>
+            <div class="wf-step" tabindex="0">Stemming / Lemmatization<div class="tip">Reduces words to their root or dictionary base form.</div></div>
+            <span class="wf-arrow">→</span>
+            <div class="wf-step" tabindex="0">Processed Text<div class="tip">Clean, structured text — ready for feature engineering.</div></div>
+          </div>
+        </div>
+
+        <div class="workflow">
+          <h3>Workflow 2 — Feature Engineering Pipeline</h3>
+          <p class="wf-desc">Processed text is converted into numerical features that reflect word importance.</p>
+          <div class="wf-steps">
+            <div class="wf-step" tabindex="0">Processed Text<div class="tip">Clean, tokenized text output from Workflow 1.</div></div>
+            <span class="wf-arrow">→</span>
+            <div class="wf-step" tabindex="0">Bag of Words / N-Grams<div class="tip">Counts word (or word-sequence) occurrences to build a vocabulary-based vector.</div></div>
+            <span class="wf-arrow">→</span>
+            <div class="wf-step" tabindex="0">TF<div class="tip">Measures how frequently each term appears within a document.</div></div>
+            <span class="wf-arrow">→</span>
+            <div class="wf-step" tabindex="0">IDF<div class="tip">Measures how rare each term is across the whole corpus.</div></div>
+            <span class="wf-arrow">→</span>
+            <div class="wf-step" tabindex="0">TF‑IDF<div class="tip">Combines TF and IDF into a single importance score per term.</div></div>
+            <span class="wf-arrow">→</span>
+            <div class="wf-step" tabindex="0">Feature Vector<div class="tip">The final numeric vector representing the document, ready for a model.</div></div>
+          </div>
+        </div>
+
+        <div class="workflow">
+          <h3>Workflow 3 — Text-to-Vector Transformation</h3>
+          <p class="wf-desc">The general path from raw language to a machine-learning-ready numerical vector.</p>
+          <div class="wf-steps">
+            <div class="wf-step" tabindex="0">Raw Text<div class="tip">The original, unprocessed sentence or document.</div></div>
+            <span class="wf-arrow">→</span>
+            <div class="wf-step" tabindex="0">Tokenization<div class="tip">Splits text into discrete word/sub-word tokens.</div></div>
+            <span class="wf-arrow">→</span>
+            <div class="wf-step" tabindex="0">Representation Technique<div class="tip">One-Hot, Word2Vec, FastText, or Contextual Embeddings applied to tokens.</div></div>
+            <span class="wf-arrow">→</span>
+            <div class="wf-step" tabindex="0">Numerical Vector<div class="tip">Dense or sparse vector encoding the token/document.</div></div>
+            <span class="wf-arrow">→</span>
+            <div class="wf-step" tabindex="0">NLP / ML Model<div class="tip">The vector is fed into a classifier, translator, or language model.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REAL-WORLD APPLICATIONS ================= -->
+    <section class="section" id="applications">
+      <div class="container">
+        <span class="section-eyebrow">Section D</span>
+        <h2>🌐 Real-World Applications</h2>
+        <p class="section-lead">Five applications that combine the concepts above into products used every day.</p>
+
+        <div class="app-grid">
+          <div class="app-card">
+            <h3>🔍 Search Engines</h3>
+            <div class="label">Relevant Concepts</div>
+            <div class="chip-row"><span class="chip">Tokenization</span><span class="chip">Text Cleaning</span><span class="chip">TF‑IDF</span><span class="chip">Word Embeddings</span></div>
+            <div class="label">Why Needed</div>
+            <p style="font-size:.85rem;margin:0 0 8px;">To represent and match user queries against millions of documents efficiently.</p>
+            <div class="label">Benefits</div>
+            <p style="font-size:.85rem;margin:0;">Better retrieval, more relevant results, improved query understanding.</p>
+          </div>
+
+          <div class="app-card">
+            <h3>💬 Chatbots</h3>
+            <div class="label">Relevant Concepts</div>
+            <div class="chip-row"><span class="chip">Lemmatization</span><span class="chip">Contextual Embeddings</span><span class="chip">Transformers</span></div>
+            <div class="label">Why Needed</div>
+            <p style="font-size:.85rem;margin:0 0 8px;">To understand user intent and generate coherent, context-aware responses.</p>
+            <div class="label">Benefits</div>
+            <p style="font-size:.85rem;margin:0;">Natural conversations, faster support, 24/7 availability.</p>
+          </div>
+
+          <div class="app-card">
+            <h3>😊 Sentiment Analysis</h3>
+            <div class="label">Relevant Concepts</div>
+            <div class="chip-row"><span class="chip">Noise Removal</span><span class="chip">Bag of Words</span><span class="chip">Word Embeddings</span></div>
+            <div class="label">Why Needed</div>
+            <p style="font-size:.85rem;margin:0 0 8px;">To automatically judge opinion or emotion behind large volumes of text.</p>
+            <div class="label">Benefits</div>
+            <p style="font-size:.85rem;margin:0;">Faster feedback analysis, brand monitoring, informed decision-making.</p>
+          </div>
+
+          <div class="app-card">
+            <h3>🌐 Machine Translation</h3>
+            <div class="label">Relevant Concepts</div>
+            <div class="chip-row"><span class="chip">Tokenization</span><span class="chip">Neural LMs</span><span class="chip">Transformers</span></div>
+            <div class="label">Why Needed</div>
+            <p style="font-size:.85rem;margin:0 0 8px;">To convert meaning — not just words — from one language into another.</p>
+            <div class="label">Benefits</div>
+            <p style="font-size:.85rem;margin:0;">Breaks language barriers, enables global communication and access.</p>
+          </div>
+
+          <div class="app-card">
+            <h3>📄 Text Summarization</h3>
+            <div class="label">Relevant Concepts</div>
+            <div class="chip-row"><span class="chip">Sentence Segmentation</span><span class="chip">TF‑IDF</span><span class="chip">Transformer-based Representations</span></div>
+            <div class="label">Why Needed</div>
+            <p style="font-size:.85rem;margin:0 0 8px;">To condense long documents into their most important points automatically.</p>
+            <div class="label">Benefits</div>
+            <p style="font-size:.85rem;margin:0;">Saves reading time, aids research, improves accessibility of information.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESEARCH & INDUSTRY ================= -->
+    <section class="section" id="research">
+      <div class="container">
+        <span class="section-eyebrow">Section E</span>
+        <h2>🔬 Research &amp; Industry Insights</h2>
+        <p class="section-lead">Two research developments, two industrial applications, and one open-source framework that connect directly to the concepts in this repository. Sources are listed in the References section.</p>
+
+        <div class="insight-grid">
+          <div class="insight-card">
+            <span class="tag">Research</span>
+            <h4>The Transformer Architecture</h4>
+            <p>The 2017 paper "Attention Is All You Need" introduced self-attention, removing the need for recurrence and enabling the parallel training of much larger language models. It underlies today's Transformer-based representations.</p>
+          </div>
+          <div class="insight-card">
+            <span class="tag">Research</span>
+            <h4>Retrieval-Augmented Generation (RAG)</h4>
+            <p>Introduced in 2020, RAG combines a language model with a document retriever, letting the model "look up" relevant text before generating a response — directly connecting search/TF‑IDF-style retrieval with modern language models.</p>
+          </div>
+          <div class="insight-card">
+            <span class="tag">Industry</span>
+            <h4>Search Engines using BERT</h4>
+            <p>Google announced in 2019 that it had incorporated BERT, a Transformer-based contextual embedding model, into Search to better understand the intent behind longer, conversational queries.</p>
+          </div>
+          <div class="insight-card">
+            <span class="tag">Industry</span>
+            <h4>AI Customer Support Assistants</h4>
+            <p>Enterprises widely deploy chatbot and virtual-assistant systems built on contextual embeddings and Transformer models to automate customer support, using the same NLP pipeline covered in this repository.</p>
+          </div>
+          <div class="insight-card">
+            <span class="tag">Open Source</span>
+            <h4>Hugging Face Transformers</h4>
+            <p>An open-source library providing pre-trained Transformer models (e.g. BERT, GPT-family) and tokenizers, widely used in both academia and industry to build NLP applications without training models from scratch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SUSTAINABILITY & SOCIETAL IMPACT ================= -->
+    <section class="section" id="sustainability">
+      <div class="container">
+        <span class="section-eyebrow">Section F</span>
+        <h2>🌍 How NLP Can Contribute to Society and Sustainable Development</h2>
+
+        <div class="sustain-grid">
+          <div class="sustain-card"><span class="emoji">🌍</span><h4>Language Accessibility</h4></div>
+          <div class="sustain-card"><span class="emoji">🗣</span><h4>Regional Languages</h4></div>
+          <div class="sustain-card"><span class="emoji">🎓</span><h4>Education</h4></div>
+          <div class="sustain-card"><span class="emoji">♿</span><h4>Assistive Technology</h4></div>
+          <div class="sustain-card"><span class="emoji">🏛</span><h4>Citizen Services</h4></div>
+        </div>
+
+        <div class="learn-box">
+          <p style="margin-bottom:14px;">Natural Language Processing has a direct role to play in making information, services, and opportunities more accessible, which connects it closely to several sustainable development goals such as quality education, reduced inequality, and inclusive institutions.</p>
+
+          <p style="margin-bottom:14px;"><strong style="color:var(--text)">Language Accessibility.</strong> Techniques like tokenization, machine translation, and contextual embeddings allow content originally written in one language to reach speakers of another. This matters in a linguistically diverse country like India, where a large share of the population is more comfortable in a regional language than in English. Translation and summarization tools built on the concepts in this repository can make government notices, news, or educational material available to far more people than before.</p>
+
+          <p style="margin-bottom:14px;"><strong style="color:var(--text)">Regional Language Technologies.</strong> Models such as FastText, which represent words using sub-word character n-grams, are particularly well suited to morphologically rich Indian languages like Hindi, Marathi, or Tamil, where a single root word can take many inflected forms. Investing in NLP for regional languages helps prevent a "digital divide" where only speakers of a handful of global languages benefit from AI-powered tools.</p>
+
+          <p style="margin-bottom:14px;"><strong style="color:var(--text)">Educational Inclusion.</strong> NLP-powered tools — automatic summarizers, question-answering systems, and grammar/spell checkers built on lemmatization and language models — can help students learn at their own pace, get instant feedback on writing, and access simplified versions of complex material. This is especially valuable for first-generation learners or students studying in a second language.</p>
+
+          <p style="margin-bottom:14px;"><strong style="color:var(--text)">Assistive Technologies.</strong> Text-to-speech and speech-to-text systems, which rely on language models and tokenization internally, help visually impaired or hearing-impaired users interact with digital content. Predictive text and autocomplete, powered by statistical and neural language models, also reduce the effort needed for users with motor disabilities to communicate.</p>
+
+          <p style="margin-bottom:0;"><strong style="color:var(--text)">Citizen Services.</strong> Government and public-service chatbots that use intent understanding and contextual embeddings can answer citizen queries about schemes, documents, or procedures in plain language, at any hour, reducing the friction of navigating bureaucratic processes — especially useful for citizens with limited digital literacy.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REFLECTION ================= -->
+    <section class="section" id="reflection">
+      <div class="container">
+        <span class="section-eyebrow">Section G</span>
+        <h2>💭 My Learning Reflection</h2>
+        <div class="reflection-box">
+          <p>Building this repository helped us understand NLP as a pipeline rather than a single technique. We started by learning why raw text can't be fed directly into a model — preprocessing steps like tokenization, stop-word removal, and lemmatization were needed just to get text into a usable, consistent shape. It was interesting to see how something as simple-sounding as "stemming a word" actually involves trade-offs between speed and accuracy.</p>
+          <p>Feature engineering was where things started connecting to math we'd only seen abstractly before — actually computing TF and IDF by hand for a small example made the formula click in a way that just reading about it never did. Moving into representation, comparing One-Hot Encoding, Word2Vec, and FastText side by side made the progression obvious: each technique exists specifically to fix a limitation of the one before it, ending with contextual embeddings solving the "same word, different meaning" problem that static embeddings couldn't.</p>
+          <p>The comparison tables were the most challenging part to write well — it's easy to say two techniques are "different," but explaining computational complexity and genuinely different use-cases required us to actually understand the internals, not just repeat definitions. Researching real applications and current industry use (like BERT in search) also made the concepts feel less academic and more like things we'll actually encounter working with text data in the future.</p>
+          <p style="margin-bottom:0;">Overall, this activity gave us a working mental model of the NLP pipeline — from raw text to a model-ready vector — that we expect to build on directly in the rest of this course, especially once we move from these foundational techniques into full language models and deep learning-based NLP.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTRIBUTION MATRIX ================= -->
+    <section class="section" id="contribution">
+      <div class="container">
+        <span class="section-eyebrow">Section H</span>
+        <h2>👥 Contribution Matrix</h2>
+        <p class="contrib-note">Contributions :- one comparative analysis, one workflow diagram component, and a reflection note per student, as required by the assignment.</p>
+        <div class="table-wrap">
+          <table class="contrib">
+            <thead><tr><th>Student</th><th>Concept Cards</th><th>Comparative Analysis</th><th>Workflow Diagram</th><th>Reflection Note</th></tr></thead>
+            <tbody>
+              <tr><td>Akshata Shinde (63)</td><td>Text Preprocessing + Feature Engineering cards</td><td>Stemming vs. Lemmatization</td><td>Workflow 1 — Preprocessing Pipeline</td><td>Contributed</td></tr>
+              <tr><td>Shubhangi Saindane (52)</td><td>Language Representation cards</td><td>Word2Vec vs. FastText</td><td>Workflow 2 — Feature Engineering Pipeline</td><td>Contributed</td></tr>
+              <tr><td>Nisha Shetiya (62)</td><td>Language Models cards</td><td>Statistical vs. Neural Language Models</td><td>Workflow 3 — Text-to-Vector Transformation</td><td>Contributed</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GLOSSARY ================= -->
+    <section class="section" id="glossary">
+      <div class="container">
+        <span class="section-eyebrow">Reference</span>
+        <h2>📖 Glossary</h2>
+        <p class="section-lead">Quick definitions for terms used throughout this repository — searchable.</p>
+        <div class="search-box glossary-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="text" id="glossary-search" placeholder="Search glossary…" aria-label="Search glossary">
+        </div>
+        <dl class="glossary-grid">
+          <div class="gterm"><dt>Token</dt><dd>The smallest unit of text after tokenization — typically a word or punctuation mark.</dd></div>
+          <div class="gterm"><dt>Corpus</dt><dd>A large, structured collection of text used to train or evaluate NLP models.</dd></div>
+          <div class="gterm"><dt>Vocabulary</dt><dd>The complete set of unique tokens/words known to a model or dataset.</dd></div>
+          <div class="gterm"><dt>Stop Word</dt><dd>A very common word (e.g. "the", "is") often removed for carrying little unique meaning.</dd></div>
+          <div class="gterm"><dt>Stemming</dt><dd>Rule-based reduction of a word to its root form by stripping suffixes.</dd></div>
+          <div class="gterm"><dt>Lemmatization</dt><dd>Dictionary and grammar-based reduction of a word to its true base form.</dd></div>
+          <div class="gterm"><dt>Vector</dt><dd>A list of numbers representing a word, sentence, or document numerically.</dd></div>
+          <div class="gterm"><dt>Embedding</dt><dd>A dense vector representation where semantically similar items are positioned close together.</dd></div>
+          <div class="gterm"><dt>N-Gram</dt><dd>A contiguous sequence of N words or characters extracted from text.</dd></div>
+          <div class="gterm"><dt>TF</dt><dd>Term Frequency — how often a term appears within a single document.</dd></div>
+          <div class="gterm"><dt>IDF</dt><dd>Inverse Document Frequency — how rare a term is across an entire corpus.</dd></div>
+          <div class="gterm"><dt>TF-IDF</dt><dd>A combined score of TF and IDF used to weigh word importance in a document.</dd></div>
+          <div class="gterm"><dt>Language Model</dt><dd>A model that estimates the probability of word sequences in a language.</dd></div>
+          <div class="gterm"><dt>Transformer</dt><dd>A neural network architecture using self-attention to process sequences in parallel.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ================= QUIZ ================= -->
+    <section class="section" id="quiz">
+      <div class="container">
+        <span class="section-eyebrow">Test Yourself</span>
+        <h2>✅ Mini Quiz</h2>
+        <p class="section-lead">10 quick questions covering everything in this repository. Select an answer for each, then check your score.</p>
+        <div class="quiz-box">
+          <div id="quiz-questions"></div>
+          <button class="btn btn-primary" id="quiz-submit" type="button">Submit Answers</button>
+          <div class="quiz-result" id="quiz-result">
+            <div class="score">0 / 10</div>
+            <p class="msg" style="margin-top:10px;margin-bottom:0;"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REFERENCES ================= -->
+    <section class="section" id="references">
+      <div class="container">
+        <span class="section-eyebrow">Sources</span>
+        <h2>🔗 References</h2>
+        <p class="section-lead">Sources used to verify definitions, working principles, and research/industry claims in this repository.</p>
+        <ul class="ref-list">
+          <li>Jurafsky, D. &amp; Martin, J. H. — <em>Speech and Language Processing</em> (textbook, Stanford University). <div class="ref-meta"><a href="https://web.stanford.edu/~jurafsky/slp3/" target="_blank" rel="noopener">web.stanford.edu/~jurafsky/slp3</a></div></li>
+          <li>Vaswani, A. et al. (2017) — "Attention Is All You Need." <div class="ref-meta"><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">arxiv.org/abs/1706.03762</a></div></li>
+          <li>Devlin, J. et al. (2018) — "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding." <div class="ref-meta"><a href="https://arxiv.org/abs/1810.04805" target="_blank" rel="noopener">arxiv.org/abs/1810.04805</a></div></li>
+          <li>Lewis, P. et al. (2020) — "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." <div class="ref-meta"><a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener">arxiv.org/abs/2005.11401</a></div></li>
+          <li>Mikolov, T. et al. (2013) — "Efficient Estimation of Word Representations in Vector Space" (Word2Vec). <div class="ref-meta"><a href="https://arxiv.org/abs/1301.3781" target="_blank" rel="noopener">arxiv.org/abs/1301.3781</a></div></li>
+          <li>Bojanowski, P. et al. (2016) — "Enriching Word Vectors with Subword Information" (FastText, Facebook AI Research). <div class="ref-meta"><a href="https://arxiv.org/abs/1607.04606" target="_blank" rel="noopener">arxiv.org/abs/1607.04606</a></div></li>
+          <li>Hugging Face — Transformers library documentation. <div class="ref-meta"><a href="https://huggingface.co/docs/transformers" target="_blank" rel="noopener">huggingface.co/docs/transformers</a></div></li>
+          <li>Google — "Understanding searches better than ever before" (BERT in Search, 2019). <div class="ref-meta"><a href="https://blog.google/products/search/search-language-understanding-bert/" target="_blank" rel="noopener">blog.google/products/search/search-language-understanding-bert</a></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= AI DECLARATION ================= -->
+    <section class="section" id="ai-declaration">
+      <div class="container">
+        <span class="section-eyebrow">Transparency</span>
+        <h2>🤝 AI Assistance Declaration</h2>
+        <div class="declaration-box">
+          <p>In line with the assignment's requirement for transparency, we declare that an AI assistant was used during the preparation of this repository — specifically to help organize the structure of the website, draft initial explanations for review, and assist with formatting the interactive components (search, filtering, workflow diagrams, and the quiz).</p>
+          <p style="margin-bottom:0;">All technical content was reviewed, verified, edited, and understood by us before submission. Definitions and working principles were cross-checked against course material and the sources listed in the References section. Any factual claims about research or industry applications were verified rather than generated without checking. We did not use AI to fabricate data, statistics, or citations, and we take full responsibility for the accuracy of the final submitted content.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<button id="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<footer>
+  <div class="container">
+    NLP Knowledge Artifact Repository · CCE‑1 · Natural Language Processing · Semester V · 2026–27
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
